@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Abstract\MongoDbRepositoryBase.cs~RF5209a90c.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.14.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GringottsBank.Core.Entities\GringottsBank.Core.Entities.csproj" />
+    <ProjectReference Include="..\GringottsBank.Models\GringottsBank.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
