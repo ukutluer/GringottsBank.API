@@ -1,0 +1,330 @@
+{
+	"info": {
+		"_postman_id": "c8234b5d-7941-408e-bedc-ad839258113d",
+		"name": "GringottsBankApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UserOperations",
+			"item": [
+				{
+					"name": "UserRegister",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\":\"test\",\r\n    \"Surname\":\"kutluer\",\r\n    \"Password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Users/Register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Users",
+								"Register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjYyMjI5OWQ1NGU2Nzg4OWY1ZjMwZThmNSIsIm5iZiI6MTY0NjQzNDgwMywiZXhwIjoxNjQ3MDM5NjAzLCJpYXQiOjE2NDY0MzQ4MDN9.TwIQlF31xvQKNYTlWfPxHTTvoRYkL3Y4h3IvCS_ZK_M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserAuthenticate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjYyMWZjYjdmNDcyOGRlMzU2ZDUzYjJlYSIsIm5iZiI6MTY0NjM0ODkxOSwiZXhwIjoxNjQ2OTUzNzE5LCJpYXQiOjE2NDYzNDg5MTl9.quiP2-nVcK5LmreXRk1XwQiYZoFAsFD-DfOdp4nn3Ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\":\"test\",\r\n    \"Surname\":\"kutluer\",\r\n    \"Password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Users/Authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Users",
+								"Authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AccountOperations",
+			"item": [
+				{
+					"name": "GetUserAccounts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjYyMjI5OWQ1NGU2Nzg4OWY1ZjMwZThmNSIsIm5iZiI6MTY0NjQzNTUzOCwiZXhwIjoxNjQ3MDQwMzM4LCJpYXQiOjE2NDY0MzU1Mzh9.X1WZxJBT46RQSlSXcvocLKOZXSwgTuRv61NGvSr0_qw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddAccount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjYyMjI5OWQ1NGU2Nzg4OWY1ZjMwZThmNSIsIm5iZiI6MTY0NjQzNDgwMywiZXhwIjoxNjQ3MDM5NjAzLCJpYXQiOjE2NDY0MzQ4MDN9.TwIQlF31xvQKNYTlWfPxHTTvoRYkL3Y4h3IvCS_ZK_M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Currency\":\"USD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Account/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Account",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserAccountById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjYyMjI5OWQ1NGU2Nzg4OWY1ZjMwZThmNSIsIm5iZiI6MTY0NjQzNTUzOCwiZXhwIjoxNjQ3MDQwMzM4LCJpYXQiOjE2NDY0MzU1Mzh9.X1WZxJBT46RQSlSXcvocLKOZXSwgTuRv61NGvSr0_qw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Account/62229a914e67889f5f30e8f8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Account",
+								"62229a914e67889f5f30e8f8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AccountTransactions",
+			"item": [
+				{
+					"name": "GetAccountTransactions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjYyMjI5OWQ1NGU2Nzg4OWY1ZjMwZThmNSIsIm5iZiI6MTY0NjQzNTUzOCwiZXhwIjoxNjQ3MDQwMzM4LCJpYXQiOjE2NDY0MzU1Mzh9.X1WZxJBT46RQSlSXcvocLKOZXSwgTuRv61NGvSr0_qw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/AccountTransaction/62229a914e67889f5f30e8f8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"AccountTransaction",
+								"62229a914e67889f5f30e8f8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddAccountTransaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjYyMjI5OWQ1NGU2Nzg4OWY1ZjMwZThmNSIsIm5iZiI6MTY0NjQzNTUzOCwiZXhwIjoxNjQ3MDQwMzM4LCJpYXQiOjE2NDY0MzU1Mzh9.X1WZxJBT46RQSlSXcvocLKOZXSwgTuRv61NGvSr0_qw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"AccountId\":\"62229a914e67889f5f30e8f8\",\r\n    \"TransactionAmount\":333\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/AccountTransaction/AddUserAccountTransaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"AccountTransaction",
+								"AddUserAccountTransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserAccountTransactions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjYyMjI5OWQ1NGU2Nzg4OWY1ZjMwZThmNSIsIm5iZiI6MTY0NjQzNTUzOCwiZXhwIjoxNjQ3MDQwMzM4LCJpYXQiOjE2NDY0MzU1Mzh9.X1WZxJBT46RQSlSXcvocLKOZXSwgTuRv61NGvSr0_qw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"StartDate\":\"2021-03-02T23:26:07.298Z\",\r\n    \"EndDate\":\"2023-03-02T23:26:07.298Z\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/AccountTransaction/GetUserAllAccountTransaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"AccountTransaction",
+								"GetUserAllAccountTransaction"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	}
+}
