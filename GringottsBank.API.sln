@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GringottsBank.API", "GringottsBank.API\GringottsBank.API.csproj", "{1927430C-4434-49CE-B240-CB16EC0FCB9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GringottsBank.API", "GringottsBank.API\GringottsBank.API.csproj", "{1927430C-4434-49CE-B240-CB16EC0FCB9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GringottsBank.Services", "GringottsBank.Services\GringottsBank.Services.csproj", "{548E9652-B06F-42CF-9ED1-701FD9EB6DC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GringottsBank.Services", "GringottsBank.Services\GringottsBank.Services.csproj", "{548E9652-B06F-42CF-9ED1-701FD9EB6DC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GringottsBank.Entities", "GringottsBank.Models\GringottsBank.Entities.csproj", "{2B87CAC7-1D88-4E6D-898E-A30843217C19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GringottsBank.Entities", "GringottsBank.Models\GringottsBank.Entities.csproj", "{2B87CAC7-1D88-4E6D-898E-A30843217C19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GringottsBank.Core.Entities", "GringottsBank.Core.Entities\GringottsBank.Core.Entities.csproj", "{B8EA77DC-9FC7-4BB0-884C-E77997F451D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GringottsBank.Core.Entities", "GringottsBank.Core.Entities\GringottsBank.Core.Entities.csproj", "{B8EA77DC-9FC7-4BB0-884C-E77997F451D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GringottsBank.Extensions", "GringottsBank.Extensions\GringottsBank.Extensions.csproj", "{258170BF-FDEC-487B-A60E-4FDE18963837}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GringottsBank.Extensions", "GringottsBank.Extensions\GringottsBank.Extensions.csproj", "{258170BF-FDEC-487B-A60E-4FDE18963837}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GringottsBank.DataAccess", "GringottsBank.DataAccess\GringottsBank.DataAccess.csproj", "{A525AE0D-4B20-408C-B0E2-1B923A32D3C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GringottsBank.DataAccess", "GringottsBank.DataAccess\GringottsBank.DataAccess.csproj", "{A525AE0D-4B20-408C-B0E2-1B923A32D3C0}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{25510768-5493-428F-926C-E08491795CDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{A525AE0D-4B20-408C-B0E2-1B923A32D3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A525AE0D-4B20-408C-B0E2-1B923A32D3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A525AE0D-4B20-408C-B0E2-1B923A32D3C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25510768-5493-428F-926C-E08491795CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25510768-5493-428F-926C-E08491795CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25510768-5493-428F-926C-E08491795CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25510768-5493-428F-926C-E08491795CDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
