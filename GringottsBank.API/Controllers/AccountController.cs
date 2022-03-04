@@ -31,7 +31,7 @@ namespace GringottsBank.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUserAccounts()
+        public IActionResult GetUserAccounts()
         {
             var userId = GetUserId();
             var userAccounts = _accountService.GetUserAccounts(userId);

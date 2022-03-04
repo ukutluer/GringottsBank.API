@@ -1,4 +1,5 @@
-﻿using GringottsBank.DataAccess.Abstract;
+﻿using GringottsBank.Core.Entities.Base;
+using GringottsBank.DataAccess.Abstract;
 using GringottsBank.Entities.AccountTransaction;
 using GringottsBank.Services.Interfaces;
 using System;
@@ -27,12 +28,14 @@ namespace GringottsBank.Services.Implementations
         public async Task AddAccountTransaction(string userId, AccountTransaction accountTransaction)
         {
             Action<AccountTransaction, string> customActionForAccountTransaction = BeginAccountTransactionOperations;
-            await _accountTransactionDal.AtomicTransaction(customActionForAccountTransaction, new object[] { accountTransaction, userId });
+            await _accountTransactionDal.BeginComplexTransaction(customActionForAccountTransaction, new object[] { accountTransaction, userId });
         }
 
         public void BeginAccountTransactionOperations(AccountTransaction txn, string userId)
         {
             var account = _accountDal.GetAsync(q => q.Id == txn.AccountId && q.UserId == userId).Result;
+            if(account == null)
+                throw new GringottsBankApiException("Account not found !!!");
             account.Balance += txn.TransactionAmount;
             txn.UserId = userId;
             txn.AccountId = account.Id;
@@ -40,7 +43,7 @@ namespace GringottsBank.Services.Implementations
             _accountDal.UpdateAsync(account, q => q.Id == account.Id);
         }
 
-        public async Task<IEnumerable<UserAccountTransactions>> GetUserTransactions(string userId, DateTime startDate, DateTime endDate)
+        public IEnumerable<UserAccountTransactions> GetUserTransactions(string userId, DateTime startDate, DateTime endDate)
         {
             var accountTransactions = _accountTransactionDal.Get(q => q.UserId == userId
                                                                  && q.CreatedAt >= startDate

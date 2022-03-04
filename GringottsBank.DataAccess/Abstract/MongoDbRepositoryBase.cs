@@ -82,7 +82,7 @@ namespace GringottsBank.DataAccess.Abstract
             return await Collection.FindOneAndDeleteAsync(filter);
         }
 
-        public async Task AtomicTransaction(Action<T,string> function, object[] parameters)
+        public async Task BeginComplexTransaction(Action<T,string> function, object[] parameters)
         {
             using (var session = await mongoClient.StartSessionAsync())
             {

@@ -20,7 +20,7 @@ namespace GringottsBank.API.Controllers
         }
 
         [HttpGet("{accountId}")]
-        public async Task<IActionResult> GetUserAccountTransactions(string accountId)
+        public IActionResult GetUserAccountTransactions(string accountId)
         {
             var accountTransactions = _accountTransactionService.GetAccountTransactions(GetUserId(), accountId);
             if (accountTransactions == null)
@@ -36,9 +36,9 @@ namespace GringottsBank.API.Controllers
         }
 
         [HttpPost("GetUserAllAccountTransaction")]
-        public async Task<IActionResult> GetUserAllAccountTransaction(UserAccountTransactionRequest accountTransactionFilter)
+        public IActionResult GetUserAllAccountTransaction(UserAccountTransactionRequest accountTransactionFilter)
         {
-            var userAccountTransactions = await _accountTransactionService.GetUserTransactions(GetUserId(), accountTransactionFilter.StartDate, accountTransactionFilter.EndDate);
+            var userAccountTransactions = _accountTransactionService.GetUserTransactions(GetUserId(), accountTransactionFilter.StartDate, accountTransactionFilter.EndDate);
             return Json(userAccountTransactions.ToUserAccountTransactionListViewModel());
         }
 

@@ -9,7 +9,6 @@ namespace GringottsBank.Services.Interfaces
     {
         IEnumerable<AccountTransaction> GetAccountTransactions(string userId, string accountId);
         Task AddAccountTransaction(string userId, AccountTransaction accountTransaction);
-
-        Task<IEnumerable<UserAccountTransactions>> GetUserTransactions(string userId, DateTime startDate, DateTime endDate);
+        IEnumerable<UserAccountTransactions> GetUserTransactions(string userId, DateTime startDate, DateTime endDate);
     }
 }

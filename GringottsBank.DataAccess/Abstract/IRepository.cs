@@ -19,6 +19,6 @@ namespace GringottsBank.DataAccess.Abstract
         Task<T> DeleteAsync(T entity);
         Task<T> DeleteAsync(TKey id);
         Task<T> DeleteAsync(Expression<Func<T, bool>> filter);
-        Task AtomicTransaction(Action<T,string> function, object[] parameters);
+        Task BeginComplexTransaction(Action<T,string> function, object[] parameters);
     }
 }
