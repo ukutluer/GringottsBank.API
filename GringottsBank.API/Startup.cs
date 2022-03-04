@@ -56,21 +56,18 @@ namespace GringottsBank.API
             services.AddSingleton<IAccountTransactionDal, AccountTransactionMongoDbDal>();
             #endregion
 
-
+            #region swagger configuration
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GringottsBank.API", Version = "v1" });
             });
+            #endregion
 
-
+            #region jwt token settings
             // set JWT authentication settings
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
-
-            // JWT authentication Aayarlaması
             var appSettings = appSettingsSection.Get<AppSettings>();
-
-
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
             services.AddAuthentication(x =>
             {
@@ -89,11 +86,14 @@ namespace GringottsBank.API
                     ValidateAudience = false
                 };
             });
+            #endregion
 
+            #region dependency injection
             //for dependency injection settings.
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IAccountTransactionService, AccountTransactionService>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -102,8 +102,10 @@ namespace GringottsBank.API
             if (env.IsDevelopment())
             {
                 //app.UseDeveloperExceptionPage();
-                app.UseExceptionHandler(builder => {
-                    builder.Run(async context => {
+                app.UseExceptionHandler(builder =>
+                {
+                    builder.Run(async context =>
+                    {
                         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
                         var error = context.Features.Get<IExceptionHandlerFeature>();
@@ -124,8 +126,10 @@ namespace GringottsBank.API
             }
             else
             {
-                app.UseExceptionHandler(builder => {
-                    builder.Run(async context => {
+                app.UseExceptionHandler(builder =>
+                {
+                    builder.Run(async context =>
+                    {
                         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
                         var error = context.Features.Get<IExceptionHandlerFeature>();
@@ -143,7 +147,7 @@ namespace GringottsBank.API
                 });
             }
 
-           
+
 
             app.UseCors(x => x
                 .AllowAnyOrigin()

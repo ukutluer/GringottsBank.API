@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GringottsBank.Core.Entities
+﻿namespace GringottsBank.Core.Entities
 {
     public class AppSettings
     {

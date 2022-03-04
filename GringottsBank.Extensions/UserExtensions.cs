@@ -21,7 +21,6 @@ namespace GringottsBank.Extensions
             return response;
         }
 
-
         private static object MapUserToUserViewModel(User user)
         {
             return new

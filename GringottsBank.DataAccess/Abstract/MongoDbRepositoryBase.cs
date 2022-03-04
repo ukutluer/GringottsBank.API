@@ -1,7 +1,6 @@
 ﻿using GringottsBank.Core.Entities.Abstract;
 using GringottsBank.Core.Entities.Settings;
 using Microsoft.Extensions.Options;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 using System;
@@ -12,6 +11,10 @@ using System.Threading.Tasks;
 
 namespace GringottsBank.DataAccess.Abstract
 {
+    /// <summary>
+    /// Repository base class
+    /// </summary>
+    /// <typeparam name="T">T is generic type </typeparam>
     public abstract class MongoDbRepositoryBase<T> : IRepository<T, string> where T : MongoDbEntity, new()
     {
         protected readonly IMongoCollection<T> Collection;
@@ -78,9 +81,6 @@ namespace GringottsBank.DataAccess.Abstract
         {
             return await Collection.FindOneAndDeleteAsync(filter);
         }
-
-
-
 
         public async Task AtomicTransaction(Action<T,string> function, object[] parameters)
         {

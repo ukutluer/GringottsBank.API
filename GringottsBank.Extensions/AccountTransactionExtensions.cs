@@ -1,7 +1,5 @@
 ﻿using GringottsBank.Core.Entities.Base;
-using GringottsBank.Entities.Account;
 using GringottsBank.Entities.AccountTransaction;
-using GringottsBank.Entities.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 

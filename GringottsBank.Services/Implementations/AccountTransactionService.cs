@@ -1,6 +1,4 @@
 ﻿using GringottsBank.DataAccess.Abstract;
-using GringottsBank.DataAccess.Concrete;
-using GringottsBank.Entities.Account;
 using GringottsBank.Entities.AccountTransaction;
 using GringottsBank.Services.Interfaces;
 using System;

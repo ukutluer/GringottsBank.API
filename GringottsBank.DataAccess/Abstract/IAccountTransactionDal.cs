@@ -1,5 +1,4 @@
 ﻿using GringottsBank.Entities.AccountTransaction;
-using System;
 
 namespace GringottsBank.DataAccess.Abstract
 {

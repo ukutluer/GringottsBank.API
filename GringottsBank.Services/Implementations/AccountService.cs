@@ -1,11 +1,8 @@
-﻿using GringottsBank.Core.Entities;
-using GringottsBank.DataAccess.Abstract;
+﻿using GringottsBank.DataAccess.Abstract;
 using GringottsBank.Entities.Account;
 using GringottsBank.Services.Interfaces;
-using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace GringottsBank.Services.Implementations
@@ -34,7 +31,7 @@ namespace GringottsBank.Services.Implementations
 
         public async Task<Account> GetUserAccountById(string userId , string accountId)
         {
-            return _accountDal.GetAsync(q=> q.UserId == userId && q.Id == accountId).Result;
+            return await _accountDal.GetAsync(q=> q.UserId == userId && q.Id == accountId);
         }
     }
 }

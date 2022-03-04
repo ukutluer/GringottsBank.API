@@ -1,5 +1,4 @@
-﻿using GringottsBank.Entities.Account;
-using GringottsBank.Entities.AccountTransaction;
+﻿using GringottsBank.Entities.AccountTransaction;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

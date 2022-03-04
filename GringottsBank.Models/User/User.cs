@@ -1,5 +1,4 @@
 ﻿using GringottsBank.Core.Entities.Abstract;
-using System;
 
 namespace GringottsBank.Entities.User
 {
