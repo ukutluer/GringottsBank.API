@@ -136,8 +136,8 @@ Also all API responses returns json format of BaseGringottsBankResponse.
 
 
 
-
-
+## System Design
+![alt text](https://github.com/ukutluer/GringottsBank.API/blob/main/SystemDesign/SystemDesign.PNG?raw=true)
   
 ## Technologies
 
